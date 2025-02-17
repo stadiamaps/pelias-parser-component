@@ -1,0 +1,53 @@
+package local:pelias;
+
+world address-parser {
+  record parsed-components {
+    // Common fields
+    admin: option<string>,
+    country: option<string>,
+    housenumber: option<string>,
+    locality: option<string>,
+    postcode: option<string>,
+    region: option<string>,
+    street: option<string>,
+    subject: option<string>,
+    unit: option<string>,
+    venue: option<string>,
+    // Uncommon; unsure if these are actually useful
+    /*
+    adjacent: option<string>,
+    alpha: option<string>,
+    alphanumeric: option<string>,
+    area: option<string>,
+    chain: option<string>,
+    unknown: option<string>,
+    dependency: option<string>,
+    directional: option<string>,
+    end-token: option<string>,
+    end-token-single-character: option<string>,
+    given-name: option<string>,
+    intersection: option<string>,
+    middle-initial: option<string>,
+    multistreet: option<string>,
+    numeric: option<string>,
+    ordinal: option<string>,
+    personal-suffix: option<string>,
+    personal-title: option<string>,
+    person: option<string>,
+    place: option<string>,
+    punctuation: option<string>,
+    road-type: option<string>,
+    start-token: option<string>,
+    stop-word: option<string>,
+    street-name: option<string>,
+    street-prefix: option<string>,
+    street-proper-name: option<string>,
+    street-suffix: option<string>,
+    surname: option<string>,
+    toponym: option<string>,
+    unit-type: option<string>,
+    */
+}
+
+  export parse: func(text: string) -> parsed-components;
+}
