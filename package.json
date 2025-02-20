@@ -6,22 +6,18 @@
   "type": "module",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
-    "build:rollup": "rollup -c",
-    "build": "npm run build:rollup && mkdir -p dist && jco componentize dist/parser.bundled.js --disable all --wit wit -o dist/parser.wasm"
+    "build:esbuild": "esbuild index.js --bundle --minify --keep-names --format=esm --outfile=dist/parser.bundled.js",
+    "build": "npm run build:esbuild && mkdir -p dist && jco componentize dist/parser.bundled.js --disable all --wit wit -o dist/parser.wasm"
   },
   "dependencies": {
     "@bytecodealliance/preview2-shim": "^0.17.1",
     "lodash": "^4.17.21",
-    "pelias-parser": "https://github.com/stadiamaps/parser.git"
+    "pelias-parser": "https://github.com/stadiamaps/parser.git#combined"
   },
   "devDependencies": {
     "@bytecodealliance/componentize-js": "^0.16.0",
     "@bytecodealliance/jco": "^1.9.1",
-    "@rollup/plugin-commonjs": "^28.0.2",
-    "@rollup/plugin-dynamic-import-vars": "^2.1.5",
-    "@rollup/plugin-node-resolve": "^16.0.0",
-    "@rollup/plugin-terser": "^0.4.4",
-    "rollup": "^4.34.8"
+    "esbuild": "^0.25.0"
   },
   "private": true
 }

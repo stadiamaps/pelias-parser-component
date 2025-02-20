@@ -5,6 +5,7 @@ world address-parser {
     // Common fields
     admin: option<string>,
     country: option<string>,
+    cross-street: option<string>,
     housenumber: option<string>,
     locality: option<string>,
     postcode: option<string>,

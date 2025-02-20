@@ -186,3 +186,7 @@ export const parse = function (text) {
 
   return parsedText
 }
+
+export const parse_to_json = function(text) {
+  return JSON.stringify(parse(text))
+}
